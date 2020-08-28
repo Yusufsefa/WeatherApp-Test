@@ -40,4 +40,10 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_navigation_fragment_ktx"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_navigation_ui_ktx"
 
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3_okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_okhttp_version"
+
 }
