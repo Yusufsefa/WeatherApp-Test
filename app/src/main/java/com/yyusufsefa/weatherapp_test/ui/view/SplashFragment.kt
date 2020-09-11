@@ -1,4 +1,4 @@
-package com.yyusufsefa.weatherapp_test.ui
+package com.yyusufsefa.weatherapp_test.ui.view
 
 import android.os.Bundle
 import android.os.CountDownTimer

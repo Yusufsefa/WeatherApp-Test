@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.yyusufsefa.weatherapp_test.ui.SplashFragment"
+        android:name="com.yyusufsefa.weatherapp_test.ui.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -16,7 +16,16 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.yyusufsefa.weatherapp_test.ui.HomeFragment"
+        android:name="com.yyusufsefa.weatherapp_test.ui.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailWeatherFragment"
+            app:destination="@id/detailWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailWeatherFragment"
+        android:name="com.yyusufsefa.weatherapp_test.ui.view.DetailWeatherFragment"
+        android:label="fragment_detail_weather"
+        tools:layout="@layout/fragment_detail_weather" />
 </navigation>
