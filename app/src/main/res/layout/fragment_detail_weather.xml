@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.DetailWeatherFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:elevation="8dp"
+            android:src="@drawable/ic_close"
+            app:layout_anchor="@id/cardView"
+            app:layout_anchorGravity="center_horizontal"
+            app:useCompatPadding="true" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
+            android:backgroundTint="@color/color_list_header"
+            android:elevation="4dp"
+            app:cardCornerRadius="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_detail_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:textColor="@color/color_txt"
+                    android:textSize="40sp"
+                    tools:text="Friday" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_detail_weather"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/txt_detail_day"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/weather_splash" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_detail_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_detail_weather"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/color_txt"
+                    android:textSize="50sp"
+                    tools:text="20" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_detail_minTemp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/img_detail_weather"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_toStartOf="@+id/txt_detail_temp"
+                    android:src="@drawable/ic_arrow_down" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_detail_minTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_detail_minTemp"
+                    android:layout_alignStart="@+id/img_detail_minTemp"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/color_txt"
+                    android:textSize="30sp"
+                    tools:text="12" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_detail_maxTemp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/img_detail_weather"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/txt_detail_temp"
+                    android:src="@drawable/ic_arrow_up" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_detail_maxTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_detail_maxTemp"
+                    android:layout_alignStart="@+id/img_detail_maxTemp"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/color_txt"
+                    android:textSize="30sp"
+                    tools:text="21" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_detail_minTemp"
+                    android:layout_marginTop="150dp"
+                    android:background="@color/white"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="30dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycWeatherforHour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_hour_for_weather" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>
