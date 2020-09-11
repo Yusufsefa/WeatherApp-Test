@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.yyusufsefa.weatherapp_test.data.response.HeaderObject
 import com.yyusufsefa.weatherapp_test.data.response.ListObject
 import com.yyusufsefa.weatherapp_test.db.dao.WeatherDao
@@ -19,6 +20,7 @@ import kotlinx.coroutines.internal.synchronized
     version = 1,
     exportSchema = false
 )
+@TypeConverters(DataTypeConverter::class)
 abstract class WeatherRoomDatabase : RoomDatabase() {
 
     abstract fun weatherDao(): WeatherDao

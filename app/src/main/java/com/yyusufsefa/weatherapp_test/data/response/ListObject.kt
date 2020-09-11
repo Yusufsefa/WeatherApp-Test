@@ -3,6 +3,7 @@ package com.yyusufsefa.weatherapp_test.data.response
 import android.graphics.Color
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import org.threeten.bp.DayOfWeek
@@ -12,6 +13,9 @@ import java.util.*
 @Parcelize
 @Entity(tableName = "listObject_table")
 data class ListObject(
+    // Room'da kaydettigin her DTO'nun @PrimaryKey'i olmak zorunda
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+
     @SerializedName("clouds")
     val clouds: Clouds,
 
@@ -79,5 +83,4 @@ data class ListObject(
     fun getDate(): String {
         return dt_txt.substringBefore(" ").substringBeforeLast(" ")
     }
-
 }
