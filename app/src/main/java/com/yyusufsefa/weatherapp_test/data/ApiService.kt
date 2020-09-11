@@ -1,14 +1,16 @@
 package com.yyusufsefa.weatherapp_test.data
 
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.yyusufsefa.weatherapp_test.data.response.WeatherResponse
+import retrofit2.Response
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
-object ApiService {
-    private val BASE_URL = "https://api.openweathermap.org"
-
-    private val retrofit = Retrofit
-        .Builder()
-        .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(BASE_URL)
-        .build()
+interface ApiService {
+    @GET("/data/{version}/forecast")
+    suspend fun getWeatherResponse(
+        @Path("version") version: Float,
+        @Query("q") location: String,
+        @Query("appid") apiKey: String
+    ): Response<WeatherResponse>
 }
