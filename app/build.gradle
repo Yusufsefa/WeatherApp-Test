@@ -25,8 +25,8 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 
     packagingOptions {
@@ -97,7 +97,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:17.0.0'
 
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
-
 
 
 }
