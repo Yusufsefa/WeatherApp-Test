@@ -1,6 +1,4 @@
 package com.yyusufsefa.weatherapp_test.data.response
 
-import androidx.room.Entity
-
-@Entity(tableName = "baseItem_table")
-open class BaseItem
+// Base Class'ı room'a kaydetmen su anda gereksiz geldi
+abstract class BaseItem

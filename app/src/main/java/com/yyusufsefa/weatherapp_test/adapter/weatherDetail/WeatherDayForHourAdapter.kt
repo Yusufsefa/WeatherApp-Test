@@ -26,12 +26,15 @@ class WeatherDayForHourAdapter(
 
 }
 
-
+/**
+ * DiffCalback'i su anda kullanmıyorsun bunun için RecyclerView.Adapter yerine ListAdater kullanmak gerek
+ * Tavsiyem ListAdapter olcaktır, cok fazla olmasada ufak bi performans farkı var diyebiliriz fakat
+ * UI'daki liste degiştidinde daha smoot bi goruntu saglıyor.
+ */
 val diffCallback = object : DiffUtil.ItemCallback<ListObject>() {
     override fun areItemsTheSame(oldItem: ListObject, newItem: ListObject): Boolean =
         oldItem == newItem
 
     override fun areContentsTheSame(oldItem: ListObject, newItem: ListObject): Boolean =
         oldItem.dt_txt == newItem.dt_txt
-
 }
