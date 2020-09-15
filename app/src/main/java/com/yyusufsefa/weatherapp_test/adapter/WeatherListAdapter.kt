@@ -1,6 +1,7 @@
 package com.yyusufsefa.weatherapp_test.adapter
 
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yyusufsefa.weatherapp_test.data.response.BaseItem
 import com.yyusufsefa.weatherapp_test.data.response.HeaderObject
@@ -70,4 +71,11 @@ class WeatherListAdapter(
         private const val ITEM = 2
     }
 
+    val diffCallback = object : DiffUtil.ItemCallback<ListObject>() {
+        override fun areItemsTheSame(oldItem: ListObject, newItem: ListObject): Boolean =
+            oldItem == newItem
+
+        override fun areContentsTheSame(oldItem: ListObject, newItem: ListObject): Boolean =
+            oldItem.dt_txt == newItem.dt_txt
+    }
 }

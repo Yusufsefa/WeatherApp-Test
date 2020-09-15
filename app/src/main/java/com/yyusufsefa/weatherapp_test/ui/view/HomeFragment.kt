@@ -9,6 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.yyusufsefa.weatherapp_test.R
 import com.yyusufsefa.weatherapp_test.adapter.WeatherListAdapter
@@ -50,6 +51,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
             this@HomeFragment openDetailFragment NavigationType.HomeToDetailFragment
 
+            val action =
+                HomeFragmentDirections.actionHomeFragmentToDetailWeatherFragment(model)
+            findNavController().navigate(action)
+
             Snackbar.make(requireView(), model.getDay().toString(), Snackbar.LENGTH_SHORT).show()
         }
 
@@ -64,6 +69,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Result.Status.SUCCESS -> {
                     prgLoadingBar.hide()
                     adapter.setNewList(result.data!!.list.distinctBy { it.getDate() })
+//                    adapter.setNewList(result.data!!.list)
                     Log.e("Data Size", result.data.list.size.toString())
                 }
                 Result.Status.ERROR -> {

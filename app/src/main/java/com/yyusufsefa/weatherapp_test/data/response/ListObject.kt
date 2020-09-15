@@ -13,7 +13,6 @@ import java.util.*
 @Parcelize
 @Entity(tableName = "listObject_table")
 data class ListObject(
-    // Room'da kaydettigin her DTO'nun @PrimaryKey'i olmak zorunda
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val _id: Long? = null,
 
     @ColumnInfo(name = "clouds")

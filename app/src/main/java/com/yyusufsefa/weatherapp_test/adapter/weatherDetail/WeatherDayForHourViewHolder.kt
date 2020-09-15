@@ -11,9 +11,6 @@ import com.bumptech.glide.Glide
 import com.yyusufsefa.weatherapp_test.R
 import com.yyusufsefa.weatherapp_test.data.response.ListObject
 
-/**
- * ViewHolder'da synthetic kullanımı leak'e yol açıyor. bunun aşagıdaki kullanımını tavisye ederim.
- */
 class WeatherDayForHourViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(
         R.layout.item_hour_for_weather,

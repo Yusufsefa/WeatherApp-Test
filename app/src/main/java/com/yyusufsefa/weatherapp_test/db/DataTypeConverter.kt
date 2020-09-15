@@ -5,12 +5,6 @@ import com.google.gson.reflect.TypeToken
 import com.yyusufsefa.weatherapp_test.data.response.*
 import java.lang.reflect.Type
 
-/**
- * TypeConverter amacı kısaca room sadece primitive tipleri ve string'i barındırabiliyor,
- * custom class'ları kaydetmek için once bunları string'e çevirmek gerekiyor.
- * Bunu için Gson,Moshi,Kotlin.Serilazionx tarzı kütüphaneler var.
- * Sen zaten Gson ekledigin için Gson üzerinden yaptım
- */
 object DataTypeConverter {
 
     @androidx.room.TypeConverter
