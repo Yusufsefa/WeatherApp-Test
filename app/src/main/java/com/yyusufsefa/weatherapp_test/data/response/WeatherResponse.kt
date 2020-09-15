@@ -1,7 +1,7 @@
 package com.yyusufsefa.weatherapp_test.data.response
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
-import com.google.gson.annotations.SerializedName
 
 /**
  * Bu tip api'lar gereksiz data'larda dönebiliyor, gereksiz dataları cekmemeni öneririm.
@@ -9,18 +9,18 @@ import com.google.gson.annotations.SerializedName
  */
 @Entity(tableName = "weatherResponse_table")
 data class WeatherResponse(
-    @SerializedName("city")
+    @ColumnInfo(name = "city")
     val city: City,
 
-    @SerializedName("cnt")
+    @ColumnInfo(name = "cnt")
     val cnt: Int,
 
-    @SerializedName("cod")
+    @ColumnInfo(name = "cod")
     val cod: String,
 
-    @SerializedName("list")
+    @ColumnInfo(name = "list")
     val list: List<ListObject>,
 
-    @SerializedName("message")
+    @ColumnInfo(name = "message")
     val message: Int
 )

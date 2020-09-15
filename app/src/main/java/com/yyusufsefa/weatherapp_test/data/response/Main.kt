@@ -1,38 +1,38 @@
 package com.yyusufsefa.weatherapp_test.data.response
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "main_table")
 data class Main(
-    @SerializedName("feels_like")
+    @ColumnInfo(name = "feels_like")
     val feels_like: Double,
 
-    @SerializedName("grnd_level")
+    @ColumnInfo(name = "grnd_level")
     val grnd_level: Int,
 
-    @SerializedName("humidity")
+    @ColumnInfo(name = "humidity")
     val humidity: Int,
 
-    @SerializedName("pressure")
+    @ColumnInfo(name = "pressure")
     val pressure: Int,
 
-    @SerializedName("sea_level")
+    @ColumnInfo(name = "sea_level")
     val sea_level: Int,
 
-    @SerializedName("temp")
+    @ColumnInfo(name = "temp")
     val temp: Double,
 
-    @SerializedName("temp_kf")
+    @ColumnInfo(name = "temp_kf")
     val temp_kf: Double,
 
-    @SerializedName("temp_max")
+    @ColumnInfo(name = "temp_max")
     val temp_max: Double,
 
-    @SerializedName("temp_min")
+    @ColumnInfo(name = "temp_min")
     val temp_min: Double
 ) : Parcelable {
     fun getTemp(): String {

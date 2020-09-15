@@ -2,9 +2,9 @@ package com.yyusufsefa.weatherapp_test.data.response
 
 import android.graphics.Color
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import org.threeten.bp.DayOfWeek
 import java.text.SimpleDateFormat
@@ -14,30 +14,30 @@ import java.util.*
 @Entity(tableName = "listObject_table")
 data class ListObject(
     // Room'da kaydettigin her DTO'nun @PrimaryKey'i olmak zorunda
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val _id: Long? = null,
 
-    @SerializedName("clouds")
+    @ColumnInfo(name = "clouds")
     val clouds: Clouds,
 
-    @SerializedName("dt")
+    @ColumnInfo(name = "dt")
     val dt: Long,
 
-    @SerializedName("dt_txt")
+    @ColumnInfo(name = "dt_txt")
     val dt_txt: String,
 
-    @SerializedName("main")
+    @ColumnInfo(name = "main")
     val main: Main,
 
-    @SerializedName("sys")
+    @ColumnInfo(name = "sys")
     val sys: Sys,
 
-    @SerializedName("weather")
+    @ColumnInfo(name = "weather")
     val weather: List<Weather>,
 
-    @SerializedName("wind")
+    @ColumnInfo(name = "wind")
     val wind: Wind,
 
-    @SerializedName("cityName")
+    @ColumnInfo(name = "cityName")
     var cityName: String = "Empty"
 ) : BaseItem(), Parcelable {
 

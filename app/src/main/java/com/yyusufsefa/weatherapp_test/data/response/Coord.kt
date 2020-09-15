@@ -1,14 +1,14 @@
 package com.yyusufsefa.weatherapp_test.data.response
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
-import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "coord_table")
 data class Coord(
 
-    @SerializedName("lat")
+    @ColumnInfo(name = "lat")
     val lat: Double?,
 
-    @SerializedName("lon")
-    val lon: Double?,
+    @ColumnInfo(name = "lon")
+    val lon: Double?
 )

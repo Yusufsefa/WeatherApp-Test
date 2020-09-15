@@ -21,7 +21,7 @@ class WeatherListHeaderViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 ) {
 
     fun bind(
-        item: HeaderObject,
+        item: HeaderObject
     ) {
         itemView.txtDegree.text = item.main.getTemp()
         Glide

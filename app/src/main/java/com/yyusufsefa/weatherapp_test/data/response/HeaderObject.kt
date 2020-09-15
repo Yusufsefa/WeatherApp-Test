@@ -1,32 +1,32 @@
 package com.yyusufsefa.weatherapp_test.data.response
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "headerObject_table")
 data class HeaderObject(
     // Room'da kaydettigin her DTO'nun @PrimaryKey'i olmak zorunda
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int = 0,
 
-    @SerializedName("clouds")
+    @ColumnInfo(name = "clouds")
     val clouds: Clouds,
 
-    @SerializedName("dt")
+    @ColumnInfo(name = "dt")
     val dt: Long,
 
-    @SerializedName("dt_txt")
+    @ColumnInfo(name = "dt_txt")
     val dt_txt: String,
 
-    @SerializedName("main")
+    @ColumnInfo(name = "main")
     val main: Main,
 
-    @SerializedName("sys")
+    @ColumnInfo(name = "sys")
     val sys: Sys,
 
-    @SerializedName("weather")
+    @ColumnInfo(name = "weather")
     val weather: List<Weather>,
 
-    @SerializedName("wind")
+    @ColumnInfo(name = "wind")
     val wind: Wind
 ) : BaseItem()

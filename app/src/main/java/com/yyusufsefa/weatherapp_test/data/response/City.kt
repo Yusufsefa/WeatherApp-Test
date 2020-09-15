@@ -1,32 +1,32 @@
 package com.yyusufsefa.weatherapp_test.data.response
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
-import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "city_table")
 data class City(
 
-    @SerializedName("coord")
+    @ColumnInfo(name = "coord")
     val coord: Coord?,
 
-    @SerializedName("country")
+    @ColumnInfo(name = "country")
     val country: String?,
 
-    @SerializedName("id")
+    @ColumnInfo(name = "id")
     val id: Int?,
 
-    @SerializedName("name")
+    @ColumnInfo(name = "name")
     val name: String?,
 
-    @SerializedName("population")
+    @ColumnInfo(name = "population")
     val population: Int?,
 
-    @SerializedName("sunrise")
+    @ColumnInfo(name = "sunrise")
     val sunrise: Int?,
 
-    @SerializedName("sunset")
+    @ColumnInfo(name = "sunset")
     val sunset: Int?,
 
-    @SerializedName("timezone")
-    val timezone: Int?,
+    @ColumnInfo(name = "timezone")
+    val timezone: Int?
 )

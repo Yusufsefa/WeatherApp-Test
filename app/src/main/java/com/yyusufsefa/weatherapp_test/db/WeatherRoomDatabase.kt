@@ -8,7 +8,6 @@ import androidx.room.TypeConverters
 import com.yyusufsefa.weatherapp_test.data.response.HeaderObject
 import com.yyusufsefa.weatherapp_test.data.response.ListObject
 import com.yyusufsefa.weatherapp_test.db.dao.WeatherDao
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
@@ -32,8 +31,7 @@ abstract class WeatherRoomDatabase : RoomDatabase() {
 
         @InternalCoroutinesApi
         fun getDatabase(
-            context: Context,
-            scope: CoroutineScope
+            context: Context
         ): WeatherRoomDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
