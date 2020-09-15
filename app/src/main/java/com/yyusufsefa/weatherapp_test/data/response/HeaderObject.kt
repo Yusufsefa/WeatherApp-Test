@@ -6,7 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "headerObject_table")
 data class HeaderObject(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var _id: Int = 0,
+    // Room'da kaydettigin her DTO'nun @PrimaryKey'i olmak zorunda
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val _id: Int,
+
     @ColumnInfo(name = "clouds")
     val clouds: Clouds,
 
