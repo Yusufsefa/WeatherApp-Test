@@ -1,4 +1,4 @@
-package com.yyusufsefa.weatherapp_test.adapter.weatherDetail
+package com.yyusufsefa.weatherapp_test.ui.adapter.weatherDetail
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

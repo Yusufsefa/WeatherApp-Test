@@ -1,13 +1,13 @@
-package com.yyusufsefa.weatherapp_test.adapter.weatherDetail
+package com.yyusufsefa.weatherapp_test.ui.adapter.weatherDetail
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
 import com.yyusufsefa.weatherapp_test.data.response.ListObject
 
 class WeatherDayForHourAdapter(
     private var itemList: List<ListObject> = listOf()
-) : RecyclerView.Adapter<WeatherDayForHourViewHolder>() {
+) : ListAdapter<ListObject, WeatherDayForHourViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherDayForHourViewHolder =
         WeatherDayForHourViewHolder(parent)
@@ -28,8 +28,8 @@ class WeatherDayForHourAdapter(
 
 val diffCallback = object : DiffUtil.ItemCallback<ListObject>() {
     override fun areItemsTheSame(oldItem: ListObject, newItem: ListObject): Boolean =
-        oldItem == newItem
+        oldItem.dt_txt == newItem.dt_txt
 
     override fun areContentsTheSame(oldItem: ListObject, newItem: ListObject): Boolean =
-        oldItem.dt_txt == newItem.dt_txt
+        oldItem == newItem
 }

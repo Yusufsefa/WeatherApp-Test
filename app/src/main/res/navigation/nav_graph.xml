@@ -27,9 +27,5 @@
         android:id="@+id/detailWeatherFragment"
         android:name="com.yyusufsefa.weatherapp_test.ui.view.DetailWeatherFragment"
         android:label="fragment_detail_weather"
-        tools:layout="@layout/fragment_detail_weather">
-        <argument
-            android:name="listObject"
-            app:argType="com.yyusufsefa.weatherapp_test.data.response.ListObject" />
-    </fragment>
+        tools:layout="@layout/fragment_detail_weather" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.yyusufsefa.weatherapp_test.adapter
+package com.yyusufsefa.weatherapp_test.ui.adapter
 
 import android.annotation.SuppressLint
 import android.graphics.Color

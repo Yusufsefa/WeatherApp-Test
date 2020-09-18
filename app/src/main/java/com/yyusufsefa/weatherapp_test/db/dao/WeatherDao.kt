@@ -11,9 +11,9 @@ import com.yyusufsefa.weatherapp_test.data.response.ListObject
 interface WeatherDao {
 
     @Query("SELECT * from listObject_table")
-    fun getWeather(): LiveData<List<ListObject>>
+    fun getAllWeather(): LiveData<List<ListObject>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(listObject: ListObject)
+    suspend fun insert(listObject: List<ListObject>)
 
 }
