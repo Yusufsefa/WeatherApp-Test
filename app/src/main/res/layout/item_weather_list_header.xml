@@ -15,7 +15,7 @@
         android:textSize="@dimen/current_text_size" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/carView"
+        android:id="@+id/cardHeader"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_marginStart="15dp"
@@ -76,10 +76,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgCurrentWeather"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:layout_below="@+id/txtWeather"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="20dp"
                 android:layout_toEndOf="@+id/txtWeather"
                 android:src="@drawable/weather_splash" />
         </RelativeLayout>

@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.yyusufsefa.weatherapp_test.R
 import com.yyusufsefa.weatherapp_test.data.response.ListObject
 
+@Suppress("DEPRECATION")
 class WeatherDayForHourViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(
         R.layout.item_hour_for_weather,
@@ -19,11 +20,14 @@ class WeatherDayForHourViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     )
 ) {
 
-    private val dayForTheTemp = itemView.findViewById<TextView>(R.id.txt_day_for_the_temp)
+    private val dayForTheTemp = itemView.findViewById<TextView>(R.id.txt_item_temp)
     private val itemHour = itemView.findViewById<TextView>(R.id.txt_item_hour)
-    private val dayForTheWeather = itemView.findViewById<ImageView>(R.id.img_day_for_the_weather)
+    private val dayForTheWeather = itemView.findViewById<ImageView>(R.id.img_item_weather)
 
-    fun bind(item: ListObject) {
+    fun bind(
+        item: ListObject,
+        position: Int
+    ) {
         itemHour.text = item.getHour()
         Glide
             .with(itemView.context)

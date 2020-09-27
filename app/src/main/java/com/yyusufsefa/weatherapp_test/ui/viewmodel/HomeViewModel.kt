@@ -1,10 +1,10 @@
 package com.yyusufsefa.weatherapp_test.ui.viewmodel
 
-import android.content.Context
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yyusufsefa.weatherapp_test.data.repository.Repository
+import com.yyusufsefa.weatherapp_test.data.response.HeaderObject
 import com.yyusufsefa.weatherapp_test.data.response.ListObject
 import com.yyusufsefa.weatherapp_test.db.WeatherRoomDatabase
 import com.yyusufsefa.weatherapp_test.db.repository.WeatherRepository
@@ -14,17 +14,16 @@ import kotlinx.coroutines.launch
 
 @InternalCoroutinesApi
 class HomeViewModel(
-    private val context: Context,
     private val mainRepository: Repository,
+    private val weatherRoomDatabase: WeatherRoomDatabase,
+    private val weatherRepository: WeatherRepository
 ) : ViewModel() {
 
-    private val _weatherData = mainRepository.weatherResponse
+    private val _weatherData = MutableLiveData<Result<List<ListObject>>>()
     val weatherData get() = _weatherData
 
-    private var weatherRepository: WeatherRepository
-
-    var allWeather: LiveData<List<ListObject>>
-
+    private val _currentData = MutableLiveData<Result<HeaderObject>>()
+    val currentWeatherData get() = _currentData
 
     fun getWeatherData(city: String) {
         viewModelScope.launch {
@@ -33,22 +32,29 @@ class HomeViewModel(
                 response.data?.list?.map {
                     it.cityName = city
                 }
-                weatherData.postValue(response)
-
-                viewModelScope.launch {
-                    weatherRepository.insert(response.data?.list!!)
-                }
+                weatherData.postValue(Result.success(response.data?.list.orEmpty()))
+                weatherRepository.insert(response.data?.list!!)
             }
         }
     }
 
-    fun getAllWeatherFromDatabase() {
-        val database = WeatherRoomDatabase.getDatabase(context)
-        val wetherDao = database.weatherDao()
-        weatherRepository = WeatherRepository(wetherDao)
-        allWeather = weatherRepository.allWeather
+    fun deleteAll() {
+        viewModelScope.launch {
+            weatherRepository.deleteAll()
+        }
     }
 
+    fun getCurrentWeatherData(city: String) {
+        viewModelScope.launch {
+            currentWeatherData.postValue(Result.loading())
+            mainRepository.getCurrentWeatherData(city).let { response ->
+                currentWeatherData.postValue(Result.success(response.data!!))
+            }
+        }
+    }
 
 }
+
+
+
 

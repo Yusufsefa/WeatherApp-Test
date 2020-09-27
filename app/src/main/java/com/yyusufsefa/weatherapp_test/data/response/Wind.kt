@@ -13,4 +13,9 @@ data class Wind(
 
     @ColumnInfo(name = "speed")
     val speed: Double
-) : Parcelable
+
+) : Parcelable {
+    fun getWind(): String {
+        return "Wind: " + speed + " km/hr"
+    }
+}

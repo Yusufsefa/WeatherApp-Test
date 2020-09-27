@@ -26,8 +26,10 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
+        dataBinding true
     }
+
+
 
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
@@ -97,6 +99,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:17.0.0'
 
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
+
 
 
 }

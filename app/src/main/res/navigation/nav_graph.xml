@@ -21,11 +21,24 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailWeatherFragment"
-            app:destination="@id/detailWeatherFragment" />
+            app:destination="@id/detailWeatherFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/detailWeatherFragment"
         android:name="com.yyusufsefa.weatherapp_test.ui.view.DetailWeatherFragment"
         android:label="fragment_detail_weather"
-        tools:layout="@layout/fragment_detail_weather" />
+        tools:layout="@layout/fragment_detail_weather">
+        <argument
+            android:name="listObject "
+            app:argType="com.yyusufsefa.weatherapp_test.data.response.ListObject" />
+        <action
+            android:id="@+id/action_detailWeatherFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </dialog>
+
 </navigation>

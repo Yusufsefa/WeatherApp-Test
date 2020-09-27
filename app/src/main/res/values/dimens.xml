@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="current_text_size">30sp</dimen>
+    <dimen name="current_text_size">23sp</dimen>
     <dimen name="cardView_padding">30dp</dimen>
 
 </resources>

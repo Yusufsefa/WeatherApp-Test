@@ -3,12 +3,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="210dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
@@ -17,28 +17,27 @@
 
         <RelativeLayout
             android:id="@+id/rltv_item"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="130dp"
+            android:layout_height="170dp"
             android:background="@color/color_list_header">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtDay"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/color_txt"
-                android:textSize="15sp"
-                tools:text="Thursday" />
+                android:textSize="10sp"
+                tools:text="WEDNESDAY" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_day_for_the_weather"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
                 android:layout_below="@+id/txtDay"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="55dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="17dp"
                 android:src="@drawable/weather_splash" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -46,28 +45,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/img_day_for_the_weather"
-                android:layout_marginHorizontal="70dp"
-                android:layout_marginTop="21dp"
+                android:layout_marginHorizontal="52dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/color_txt"
-                android:textSize="27sp"
+                android:textSize="17sp"
                 tools:text="30" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/arrowDown"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
                 android:layout_below="@id/txt_day_for_the_temp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
                 android:src="@drawable/ic_arrow_down" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/arrowUp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
                 android:layout_below="@id/txt_day_for_the_temp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="7dp"
                 android:layout_toEndOf="@id/arrowDown"
                 android:src="@drawable/ic_arrow_up" />
 
@@ -77,10 +76,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/arrowDown"
                 android:layout_alignStart="@id/arrowDown"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginBottom="6dp"
                 android:textColor="@color/color_txt"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 tools:text="11" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -89,10 +88,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/arrowUp"
                 android:layout_alignStart="@id/arrowUp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginBottom="6dp"
                 android:textColor="@color/color_txt"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 tools:text="21" />
 
         </RelativeLayout>
@@ -100,3 +99,4 @@
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>
+

@@ -11,4 +11,9 @@ class WeatherRepository(private val weatherDao: WeatherDao) {
         weatherDao.insert(listObject)
     }
 
+    suspend fun deleteAll() {
+        weatherDao.deleteAll()
+    }
+
+
 }

@@ -46,4 +46,9 @@ data class Main(
     fun getMinTemp(): String {
         return (temp_min - 273.15f).toString().substringBefore(".") + "°"
     }
+
+    fun getHumidity(): String {
+        return "Humidity:  " + humidity + "%"
+    }
+
 }

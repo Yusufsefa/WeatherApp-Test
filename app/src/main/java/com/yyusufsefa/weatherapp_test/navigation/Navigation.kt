@@ -26,3 +26,14 @@ infix fun Fragment.openDetailFragment(navigationType: NavigationType) {
         }
     }
 }
+
+infix fun Fragment.openDetailToHomeFragment(navigationType: NavigationType) {
+    when (navigationType) {
+        NavigationType.DetailToHomeFragment -> {
+            findNavController().navigate(R.id.action_detailWeatherFragment_to_homeFragment)
+        }
+        else -> {
+            throw Exception("Wrong NavigationType: $navigationType")
+        }
+    }
+}
