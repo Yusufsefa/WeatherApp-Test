@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rltvHome"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    tools:context=".ui.view.HomeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include
-        android:id="@+id/container"
-        layout="@layout/item_weather_list_header"
+    <RelativeLayout
+        android:id="@+id/rltvHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:context=".ui.view.HomeFragment">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt_view_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/container"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        tools:text="Next 5 Days/Hourly" />
+        <include
+            android:id="@+id/container"
+            layout="@layout/item_weather_list_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycWeather"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_view_header"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_weather_list" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_view_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:text="Next 5 Days/Hourly" />
 
-    <ProgressBar
-        android:id="@+id/prgLoadingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_view_header"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_weather_list" />
 
-</RelativeLayout>
+        <ProgressBar
+            android:id="@+id/prgLoadingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+    </RelativeLayout>
+
+</layout>
 

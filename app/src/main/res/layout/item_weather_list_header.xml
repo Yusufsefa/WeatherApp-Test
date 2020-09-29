@@ -1,89 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <data>
+
+        <variable
+            name="header"
+            type="com.yyusufsefa.weatherapp_test.data.response.HeaderObject" />
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Current"
-        android:textColor="@color/color_list_header"
-        android:textSize="@dimen/current_text_size" />
+        android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardHeader"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:elevation="4dp"
-        app:cardBackgroundColor="@color/color_list_header"
-        app:cardCornerRadius="30dp">
-
-        <RelativeLayout
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Current"
+            android:textColor="@color/color_list_header"
+            android:textSize="@dimen/current_text_size" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtDegree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="20dp"
-                android:textColor="@color/color_txt"
-                android:textSize="40sp"
-                tools:text="20" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardHeader"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/color_list_header"
+            app:cardCornerRadius="30dp">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtWeather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtDegree"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/color_txt"
-                android:textSize="20sp"
-                tools:text="Rain" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtHumidity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtWeather"
-                android:paddingStart="30dp"
-                android:paddingTop="20dp"
-                android:textColor="@color/color_txt"
-                android:textSize="15sp"
-                tools:text="Humidity" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDegree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp"
+                    android:text="@{header.main.temp}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="40sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtWeather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDegree"
+                    android:layout_centerHorizontal="true"
+                    android:text="@{header.weather.get(0).main}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtWeather"
+                    android:paddingStart="30dp"
+                    android:paddingTop="20dp"
+                    android:text="@{header.main.humidity}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="15sp" />
 
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtWind"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtHumidity"
-                android:paddingStart="30dp"
-                android:paddingTop="10dp"
-                android:textColor="@color/color_txt"
-                android:textSize="15sp"
-                tools:ignore="RtlSymmetry"
-                tools:text="Wind" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtWind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtHumidity"
+                    android:paddingStart="30dp"
+                    android:paddingTop="10dp"
+                    android:text="@{header.wind.wind}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="15sp"
+                    tools:ignore="RtlSymmetry" />
 
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imgCurrentWeather"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_below="@+id/txtWeather"
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/txtWeather"
-                android:src="@drawable/weather_splash" />
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/imgCurrentWeather"
+                    android.downloadUrl="@{header.weather.get(0).icon}"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/txtWeather"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/txtWeather" />
+            </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+    </LinearLayout>
+
+</layout>
