@@ -33,7 +33,7 @@ class HomeViewModel(
                     it.cityName = city
                 }
                 weatherData.postValue(Result.success(response.data?.list.orEmpty()))
-                weatherRepository.insert(response.data?.list!!)
+                weatherRepository.insert(response.data?.list.orEmpty())
             }
         }
     }

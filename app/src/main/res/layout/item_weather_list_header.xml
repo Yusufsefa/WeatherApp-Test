@@ -32,7 +32,7 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
             android:elevation="4dp"
-            app:cardBackgroundColor="@color/color_list_header"
+            app:cardBackgroundColor="@{header.colorForDay}"
             app:cardCornerRadius="30dp">
 
             <RelativeLayout
@@ -82,7 +82,6 @@
                     android:textColor="@color/color_txt"
                     android:textSize="15sp"
                     tools:ignore="RtlSymmetry" />
-
 
                 <ImageView
                     android:id="@+id/imgCurrentWeather"

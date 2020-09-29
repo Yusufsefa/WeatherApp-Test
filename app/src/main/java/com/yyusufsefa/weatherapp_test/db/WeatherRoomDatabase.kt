@@ -16,7 +16,7 @@ import kotlinx.coroutines.internal.synchronized
         ListObject::class,
         HeaderObject::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(DataTypeConverter::class)

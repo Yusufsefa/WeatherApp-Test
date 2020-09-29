@@ -19,14 +19,17 @@ fun View.show() {
 
 fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDrawable) {
 
-    val options = RequestOptions()
-        .placeholder(progressDrawable)
-        .error(R.mipmap.ic_launcher_round)
+    url?.let {
+        val options = RequestOptions()
+            .placeholder(progressDrawable)
+            .error(R.mipmap.ic_launcher_round)
 
-    Glide.with(context)
-        .setDefaultRequestOptions(options)
-        .load(url)
-        .into(this)
+        Glide.with(context)
+            .setDefaultRequestOptions(options)
+            .load("http://openweathermap.org/img/wn/" + url + ".png")
+            .into(this)
+    }
+
 }
 
 fun placeholderProgressBar(context: Context?): CircularProgressDrawable {
@@ -38,6 +41,6 @@ fun placeholderProgressBar(context: Context?): CircularProgressDrawable {
 }
 
 @BindingAdapter("android.downloadUrl")
-fun downloadImage(view: ImageView, url: String) {
+fun downloadImage(view: ImageView, url: String?) {
     view.downloadFromUrl(url, placeholderProgressBar(view.context))
 }

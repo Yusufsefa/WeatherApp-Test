@@ -1,102 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+    <data>
+
+        <variable
+            name="listObject"
+            type="com.yyusufsefa.weatherapp_test.data.response.ListObject" />
+    </data>
+
+
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="20dp">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/rltv_item"
-            android:layout_width="130dp"
-            android:layout_height="170dp"
-            android:background="@color/color_list_header">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="20dp">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="39dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/color_txt"
-                android:textSize="10sp"
-                tools:text="WEDNESDAY" />
+            <RelativeLayout
+                android:id="@+id/rltv_item"
+                android:layout_width="130dp"
+                android:layout_height="170dp"
+                android:background="@{listObject.colorForDay}">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_day_for_the_weather"
-                android:layout_width="40dp"
-                android:layout_height="35dp"
-                android:layout_below="@+id/txtDay"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="17dp"
-                android:src="@drawable/weather_splash" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{listObject.day}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="10sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_day_for_the_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_day_for_the_weather"
-                android:layout_marginHorizontal="52dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/color_txt"
-                android:textSize="17sp"
-                tools:text="30" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_day_for_the_weather"
+                    android.downloadUrl="@{listObject.weather.get(0).icon}"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/txtDay"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="17dp" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/arrowDown"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:layout_below="@id/txt_day_for_the_temp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/ic_arrow_down" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_day_for_the_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_day_for_the_weather"
+                    android:layout_marginHorizontal="52dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{listObject.main.temp}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="17sp" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/arrowUp"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:layout_below="@id/txt_day_for_the_temp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="7dp"
-                android:layout_toEndOf="@id/arrowDown"
-                android:src="@drawable/ic_arrow_up" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrowDown"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_below="@id/txt_day_for_the_temp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_arrow_down" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_minTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/arrowDown"
-                android:layout_alignStart="@id/arrowDown"
-                android:layout_marginStart="2dp"
-                android:layout_marginBottom="6dp"
-                android:textColor="@color/color_txt"
-                android:textSize="12sp"
-                tools:text="11" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrowUp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_below="@id/txt_day_for_the_temp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_toEndOf="@id/arrowDown"
+                    android:src="@drawable/ic_arrow_up" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_maxTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/arrowUp"
-                android:layout_alignStart="@id/arrowUp"
-                android:layout_marginStart="2dp"
-                android:layout_marginBottom="6dp"
-                android:textColor="@color/color_txt"
-                android:textSize="12sp"
-                tools:text="21" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_minTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arrowDown"
+                    android:layout_alignStart="@id/arrowDown"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="6dp"
+                    android:text="@{listObject.main.minTemp}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="12sp" />
 
-        </RelativeLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_maxTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arrowUp"
+                    android:layout_alignStart="@id/arrowUp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="6dp"
+                    android:text="@{listObject.main.maxTemp}"
+                    android:textColor="@color/color_txt"
+                    android:textSize="12sp" />
 
-    </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
-</FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</layout>
+
 
