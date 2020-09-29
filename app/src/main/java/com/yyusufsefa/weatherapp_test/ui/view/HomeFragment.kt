@@ -240,6 +240,5 @@ class HomeFragment : Fragment() {
         private val LOCATION_REQUEST_CODE = 1
     }
 
-
 }
 

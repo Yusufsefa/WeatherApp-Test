@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
                 android:elevation="8dp"
-                android:src="@drawable/ic_close"
+                android:src="@drawable/ic_refresh"
                 app:layout_anchor="@id/cardView"
                 app:layout_anchorGravity="center_horizontal"
                 app:useCompatPadding="true" />
