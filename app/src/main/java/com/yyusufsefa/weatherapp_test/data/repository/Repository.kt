@@ -43,7 +43,7 @@ class Repository(
 
     companion object {
         private const val API_VERSION = 2.5f
-        private const val API_KEY = "24e2d314f8aef1c2d752bb1c0a83a06d"
+        private const val API_KEY = "YOUR_API_KEY"
     }
 
 }
